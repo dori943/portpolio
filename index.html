@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="프론트엔드 개발자 포트폴리오 — HTML, CSS, JavaScript" />
+  <title>Dev Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" role="navigation" aria-label="메인 내비게이션">
+      <a href="#hero" class="nav__logo" aria-label="홈으로 이동">
+        <span class="nav__logo-bracket">[</span>dev<span class="nav__logo-accent">.</span>portfolio<span class="nav__logo-bracket">]</span>
+      </a>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#about" class="nav__link">about</a></li>
+        <li><a href="#skills" class="nav__link">skills</a></li>
+        <li><a href="#projects" class="nav__link">projects</a></li>
+        <li><a href="#contact" class="nav__link">contact</a></li>
+      </ul>
+
+      <div class="nav__controls">
+        <button class="btn-theme" id="theme-toggle" aria-label="다크 모드 전환" title="테마 전환">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="btn-hamburger" id="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="hero__eyebrow">
+          <span class="hero__prompt">$</span> hello world
+        </p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__name">김도희</span><br />
+          <span class="hero__role" id="typed-role" aria-live="polite"></span><span class="hero__cursor" aria-hidden="true">|</span>
+        </h1>
+        <p class="hero__desc">
+          사용자 경험을 코드로 설계하는 프론트엔드 개발자입니다.<br />
+          깔끔한 구조와 섬세한 인터랙션을 추구합니다.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            <i class="fa-solid fa-folder-open"></i> 프로젝트 보기
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <i class="fa-solid fa-paper-plane"></i> 연락하기
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section__title" id="about-title">
+          <span class="section__label">01</span> About Me
+        </h2>
+        <div class="about__grid">
+          <div class="about__image-wrap reveal">
+            <div class="about__image-frame">
+              <img
+                src="images/profile.jpg"
+                alt="김도희 프로필 사진 — 개발자 포트폴리오"
+                class="about__image"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="about__image-fallback" style="display:none;" aria-hidden="true">
+                <i class="fa-solid fa-user-astronaut"></i>
+              </div>
+            </div>
+          </div>
+          <div class="about__text reveal">
+            <p class="about__lead">
+              안녕하세요! 컴퓨터 비전, 자율이동체에 관심있는 AI개발자 <strong>김도희</strong>입니다.
+            </p>
+            <p>
+              대학에서 AI융합학부를 전공하며 다양한 프로젝트와 연구 경험을 쌓았습니다.<br />
+              현재는 프론트엔드 개발자로서 웹 기술을 활용한 창의적인 솔루션을 개발하는 데 열정을 가지고 있습니다.
+            </p>
+            <ul class="about__meta">
+              <li><i class="fa-solid fa-location-dot"></i> 서울, 대한민국</li>
+              <li><i class="fa-solid fa-graduation-cap"></i> AI 주전공, IoT 복수전공</li>
+              <li><i class="fa-solid fa-brain"></i> AMI LAB 학부연구생</li>
+              <li><i class="fa-solid fa-code-branch"></i> GitHub에서 개발 중</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--sm">
+              <i class="fa-solid fa-envelope"></i> 이메일 보내기
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills section section--alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section__title" id="skills-title">
+          <span class="section__label">02</span> Skills
+        </h2>
+        <div class="skills__grid">
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-html5"></i></div>
+            <h3 class="skill-card__name">HTML5</h3>
+            <p class="skill-card__desc">시맨틱 마크업, 접근성, SEO 최적화</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 숙련도 90%">
+              <div class="skill-card__fill" data-width="90"></div>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-css3-alt"></i></div>
+            <h3 class="skill-card__name">CSS3</h3>
+            <p class="skill-card__desc">Flexbox, Grid, 애니메이션, 반응형</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 숙련도 85%">
+              <div class="skill-card__fill" data-width="85"></div>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-js"></i></div>
+            <h3 class="skill-card__name">JavaScript</h3>
+            <p class="skill-card__desc">ES6+, DOM, 비동기 처리, API 연동</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript 숙련도 80%">
+              <div class="skill-card__fill" data-width="80"></div>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-git-alt"></i></div>
+            <h3 class="skill-card__name">Git</h3>
+            <p class="skill-card__desc">버전 관리, 협업, GitHub Pages 배포</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Git 숙련도 75%">
+              <div class="skill-card__fill" data-width="75"></div>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-react"></i></div>
+            <h3 class="skill-card__name">React</h3>
+            <p class="skill-card__desc">컴포넌트, 상태 관리, Hooks 학습 중</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="React 숙련도 55%">
+              <div class="skill-card__fill" data-width="55"></div>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-card__icon"><i class="fa-brands fa-node-js"></i></div>
+            <h3 class="skill-card__name">Node.js</h3>
+            <p class="skill-card__desc">기초 서버 구성, npm 생태계</p>
+            <div class="skill-card__bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js 숙련도 50%">
+              <div class="skill-card__fill" data-width="50"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section__title" id="projects-title">
+          <span class="section__label">03</span> Projects
+        </h2>
+        <p class="section__sub">GitHub에서 실시간으로 불러온 저장소 목록입니다.</p>
+
+        <!-- GitHub 아이디 입력 -->
+        <div class="projects__search">
+          <label for="github-username" class="sr-only">GitHub 사용자 이름</label>
+          <div class="projects__search-wrap">
+            <i class="fa-brands fa-github projects__search-icon"></i>
+            <input
+              type="text"
+              id="github-username"
+              class="projects__search-input"
+              placeholder="GitHub 아이디 입력 후 Enter"
+              value="dori943"
+              aria-label="GitHub 사용자 이름"
+            />
+            <button class="btn btn--primary btn--sm" id="fetch-repos-btn" aria-label="저장소 불러오기">
+              <i class="fa-solid fa-magnifying-glass"></i> 불러오기
+            </button>
+          </div>
+        </div>
+
+        <!-- 상태 영역 -->
+        <div class="projects__state" id="projects-state" aria-live="polite" aria-atomic="true">
+          <!-- JS가 동적으로 채움 -->
+        </div>
+
+        <!-- 카드 그리드 -->
+        <div class="projects__grid" id="projects-grid" role="list" aria-label="GitHub 저장소 목록">
+          <!-- JS가 동적으로 채움 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section section--alt" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section__title" id="contact-title">
+          <span class="section__label">04</span> Contact
+        </h2>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <p class="contact__lead">프로젝트 협업이나 채용 제안, 궁금한 점이 있다면<br />언제든지 연락해 주세요.</p>
+            <ul class="contact__channels">
+              <li>
+                <a href="mailto:ehgml8945@gmail.com" class="contact__channel-link">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>ehgml8945@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/dori943" target="_blank" rel="noopener noreferrer" class="contact__channel-link">
+                  <i class="fa-brands fa-github"></i>
+                  <span>github.com/dori943</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/dohee-kim" target="_blank" rel="noopener noreferrer" class="contact__channel-link">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn 프로필</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate aria-label="문의 폼">
+            <div class="form-field" id="field-name">
+              <label for="contact-name" class="form-field__label">이름 <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                class="form-field__input"
+                placeholder="홍길동"
+                autocomplete="name"
+                required
+                aria-required="true"
+                aria-describedby="error-name"
+              />
+              <p class="form-field__error" id="error-name" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field" id="field-email">
+              <label for="contact-email" class="form-field__label">이메일 <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                class="form-field__input"
+                placeholder="name@example.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+                aria-describedby="error-email"
+              />
+              <p class="form-field__error" id="error-email" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field" id="field-message">
+              <label for="contact-message" class="form-field__label">메시지 <span aria-hidden="true">*</span></label>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="form-field__input form-field__textarea"
+                placeholder="안녕하세요, 문의드립니다..."
+                rows="5"
+                required
+                aria-required="true"
+                aria-describedby="error-message"
+              ></textarea>
+              <p class="form-field__error" id="error-message" role="alert" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="form-submit-btn">
+              <i class="fa-solid fa-paper-plane"></i> 메시지 전송
+            </button>
+
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <i class="fa-solid fa-circle-check"></i>
+              <strong>메시지가 전송되었습니다!</strong>
+              <p>빠른 시일 내에 답장 드리겠습니다.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copy">
+        &copy; <span id="current-year"></span> 김도희. 순수 HTML/CSS/JS로 제작.
+      </p>
+      <ul class="site-footer__social" role="list">
+        <li>
+          <a href="https://github.com/dori943" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/dohee-kim" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn 프로필">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dev@example.com" aria-label="이메일 보내기">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TOP BUTTON ===== -->
+  <button class="scroll-top" id="scroll-top" aria-label="페이지 맨 위로 이동" title="맨 위로">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts (defer) -->
+  <script src="js/api.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
