@@ -27,15 +27,15 @@
 
 ```
 portfolio/
-├── index.html          # 메인 페이지 (시맨틱 마크업)
+├── index.html          # 구조 = 메인 페이지 (시맨틱 마크업)
 ├── css/
-│   └── style.css       # 스타일 (CSS Variables, 반응형, 다크모드)
+│   └── style.css       # 표현 = 스타일 (CSS Variables, 반응형, 다크모드)
 ├── js/
-│   ├── main.js         # 인터랙션 (테마, 메뉴, 스크롤, 애니메이션)
-│   ├── api.js          # GitHub API 연동 (비동기, 상태 관리)
-│   └── form.js         # 폼 유효성 검사
+│   ├── main.js         # 동작 = 인터랙션 (테마, 메뉴, 스크롤, 애니메이션)
+│   ├── api.js          # 데이터 = GitHub API 연동 (비동기, 상태 관리)
+│   └── form.js         # 검증 = 폼 유효성 검사
 ├── images/
-│   └── profile.jpg     # 프로필 이미지
+│   └── profile.jpg     
 └── README.md
 ```
 
@@ -69,14 +69,50 @@ portfolio/
 
 ---
 
-## 💡 상태 관리 흐름
+### 시맨틱 태그 사용 기준
 
-| # | 이벤트 | 상태 변경 | 화면 업데이트 |
-|---|--------|-----------|--------------|
-| 1 | 다크모드 버튼 클릭 | `isDark` 토글, localStorage 저장 | `data-theme` 변경, 아이콘 교체 |
-| 2 | GitHub API 호출 | `loading → success/error/empty` | Projects 섹션 UI 변경 |
-| 3 | 폼 입력 | `isValid` 변경 | 에러 메시지 표시/숨김 |
-| 4 | 스크롤 | `isNavScrolled`, `isScrollTopShown` | 네비 스타일, 버튼 표시 |
+```bash
+<header>   → 사이트 전체 상단 (로고 + 네비)
+<nav>      → 페이지 이동 링크 모음
+<main>     → 페이지의 핵심 콘텐츠
+<section>  → 주제별 구역 (Hero, About, Skills...)
+<article>  → 독립적인 콘텐츠 단위 (스킬 카드, 프로젝트 카드)
+<footer>   → 저작권, 소셜 링크
+```
+
+---
+
+### addEventListener 방식을 쓰는 이유
+
+기존 쉬운 onclick 방식은 아래와 같이 화면 구조 + 기능을 모두 담고 있어 기능 변경시 html 파일에서 고치고 js파일에서 또 고쳐야하는 번거로움 발생
+
+addEventLister 방식은 **HTML에서 화면 구조**만 담당, **JS에서 기능만 담당**하도록 하여 역할을 분리함.
+
+### 모바일 퍼스트를 사용한 이유
+
+모바일 퍼스트 : 기본 CSS를 모바일 기준으로 작성하고, 화면이 넓어질수록 min-width 미디어쿼리로 덮어쓰는 방식 <=> 데스크톱 퍼스트
+
+모바일 퍼스트가 좋은 이유 3가지:
+첫째, 모바일 트래픽이 데스크톱보다 많기 때문에 핵심 콘텐츠를 먼저 설계하게 됩니다.
+둘째, CSS 용량이 줄어듭니다. 모바일은 기본 스타일만 로드하고, 데스크톱은 추가 스타일을 덮어쓰는 구조라 불필요한 스타일 계산이 줄어듭니다.
+셋째, 작은 화면부터 설계하면 콘텐츠 우선순위가 명확해집니다. 좁은 화면에서 보여줄 것과 숨길 것을 먼저 결정하게 되기 때문입니다.
+
+```bash
+/* 기본 = 모바일 */
+.skills__grid {
+  grid-template-columns: 1fr;  /* 1열 */
+}
+
+/* 768px 이상 = 태블릿 */
+@media (min-width: 768px) {
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 1024px 이상 = 데스크톱 */
+@media (min-width: 1024px) {
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+}
+```
 
 ---
 
