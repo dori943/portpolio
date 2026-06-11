@@ -396,7 +396,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: .72rem;
   color: var(--color-text-muted);
   letter-spacing: .1em;
-  animation: float 5s ease-in-out infinite;
+  animation: None;
 }
 
 @keyframes float {
