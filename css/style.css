@@ -401,7 +401,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(-6px); }
+  50%       { transform: translateX(-50%) translateY(-4px); }
 }
 
 /* ── 8. ABOUT ── */

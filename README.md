@@ -6,7 +6,7 @@
 
 ## 🚀 배포 URL
 
-**GitHub Pages:** `https://github.com/dori943/portpolio.git`
+**GitHub Pages:** `https://dori943.github.io/portpolio/`
 
 ---
 
